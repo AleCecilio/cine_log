@@ -139,8 +139,8 @@ python src/main.py
 ## 👤 Autor
 
 Feito com ❤️ por Alessandro Moreira Cecilio
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AleCecilio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alessandro-cecilio/)
 
 ---
 
