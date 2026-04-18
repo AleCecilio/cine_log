@@ -19,7 +19,8 @@ cine_log/
 ├── dist/
 │   └── CineLog.exe              # Executável gerado pelo PyInstaller
 ├── src/
-│   ├── main.py                  # Ponto de entrada da aplicação
+│   ├── main.py                  # Ponto de entrada — interface gráfica (GUI)
+│   ├── main_terminal.py         # Ponto de entrada — interface de terminal (CLI)
 │   ├── model/
 │   │   ├── config.py            # Configurações de caminho e ambiente
 │   │   ├── database_handler.py  # Leitura e escrita no JSON
@@ -29,12 +30,12 @@ cine_log/
 │   │   └── rules.py             # Validações (título, data, nota)
 │   └── view/
 │   │   ├── app.py               # Interface gráfica principal (CTk)
+│   │   └── logocinema.ico       # Ícone da aplicação
 │   │   ├──terminal/
 │   │       ├── forms.py             # Formulários modais
 │   │       ├── menu.py              # Barra de menus
 │   │       ├── reports.py           # Tela de relatórios
 │   │       ├── io_helpers.py        # Utilitários de I/O para a view
-│   │       └── logocinema.ico       # Ícone da aplicação
 │   ├── CineLog.spec                 # Configuração do PyInstaller
 ├── LICENSE
 └── README.md
@@ -51,6 +52,7 @@ cine_log/
 - 🌙 **Tema escuro** — interface com paleta dark usando CustomTkinter
 - 💾 **Persistência local** — dados salvos em JSON, sem necessidade de banco externo
 - 📦 **Executável standalone** — distribuível via `.exe` gerado com PyInstaller
+- 🖥️ **Modo terminal (CLI)** — versão alternativa para rodar diretamente no terminal, sem interface gráfica
 
 ---
 
@@ -87,7 +89,7 @@ Model (repository.py, database_handler.py)
 
 Baixe o arquivo `CineLog.exe` na pasta `dist/` e execute diretamente.
 
-### Opção 2 — Rodando pelo código-fonte
+### Opção 2 — Interface Gráfica (GUI)
 
 **1. Clone o repositório**
 ```bash
@@ -115,6 +117,16 @@ pip install -r requirements.txt
 ```bash
 python src/main.py
 ```
+
+### Opção 3 — Terminal (CLI)
+
+Prefere rodar sem interface gráfica? Use o modo terminal. Os passos 1 a 3 são os mesmos da Opção 2, apenas o comando de execução muda:
+
+```bash
+python src/main_terminal.py
+```
+
+> Não requer instalação do CustomTkinter — funciona em qualquer ambiente com Python puro.
 
 ---
 

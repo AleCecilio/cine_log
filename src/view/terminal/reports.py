@@ -1,4 +1,4 @@
-from view.io_helpers import _cabecalho, _pausar
+from .io_helpers import _cabecalho, _pausar
 from services import engine
 
  
