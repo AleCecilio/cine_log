@@ -138,7 +138,7 @@ python src/main.py
 
 ## 👤 Autor
 
-Feito com ❤️ por **[Seu Nome]**
+Feito com ❤️ por Alessandro Moreira Cecilio
 - GitHub: [@seu-usuario](https://github.com/seu-usuario)
 - LinkedIn: [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil)
 
