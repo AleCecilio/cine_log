@@ -15,30 +15,42 @@ Permitir que o usuário registre os filmes que assistiu, atribua notas e gerenci
 ```
 cine_log/
 ├── data/
-│   └── cinelog.json             # Banco de dados local (diário + watchlist)
+│   └── cinelog.json             # Banco de dados (JSON)
 ├── dist/
-│   └── CineLog.exe              # Executável gerado pelo PyInstaller
+│   ├── CineLog.exe              # Executável final (gerado pelo PyInstaller)
+│   └──data/
+│      └── cinelog.json             # Banco de dados (JSON)
 ├── src/
-│   ├── main.py                  # Ponto de entrada — interface gráfica (GUI)
-│   ├── main_terminal.py         # Ponto de entrada — interface de terminal (CLI)
+│   ├── main.py                  # Ponto de entrada (GUI)
+│   ├── main_terminal.py         # Ponto de entrada (Terminal)
 │   ├── model/
-│   │   ├── config.py            # Configurações de caminho e ambiente
-│   │   ├── database_handler.py  # Leitura e escrita no JSON
-│   │   └── repository.py        # Acesso aos dados (diário e watchlist)
+│   │   ├── config.py            # Configuração de caminhos e ambiente
+│   │   ├── database_handler.py  # Leitura e escrita no arquivo JSON
+│   │   └── repository.py        # Acesso lógico aos dados
 │   ├── services/
 │   │   ├── engine.py            # Regras de negócio e orquestração
-│   │   └── rules.py             # Validações (título, data, nota)
+│   │   └── rules.py             # Validações de título, data e nota
 │   └── view/
-│   │   ├── app.py               # Interface gráfica principal (CTk)
-│   │   └── logocinema.ico       # Ícone da aplicação
-│   │   ├──terminal/
-│   │       ├── forms.py             # Formulários modais
-│   │       ├── menu.py              # Barra de menus
-│   │       ├── reports.py           # Tela de relatórios
-│   │       ├── io_helpers.py        # Utilitários de I/O para a view
-│   ├── CineLog.spec                 # Configuração do PyInstaller
-├── LICENSE
-└── README.md
+│       ├── __init__.py
+│       ├── app.py               # Orquestrador da Interface Gráfica
+│       ├── theme.py             # Central de cores e estilos (CORES)
+│       ├── components/          # Peças reutilizáveis da UI
+│       │   ├── __init__.py
+│       │   ├── tabela.py        # Classe TabelaEstilizada
+│       │   └── modais.py        # Janelas de formulário (Pop-ups)
+│       ├── tabs/                # Telas/Abas principais
+│       │   ├── __init__.py
+│       │   ├── aba_diario.py    # Lógica da aba Diário
+│       │   └── aba_watchlist.py # Lógica da aba Watchlist
+│       └── terminal/            # Interface antiga (Modo Texto)
+│           ├── __init__.py
+│           ├── forms.py         # Formulários do terminal
+│           ├── menu.py          # Menus do terminal
+│           ├── reports.py       # Relatórios do terminal
+│           └── io_helpers.py    # Utilitários de entrada/saída
+├── CineLog.spec                 # Arquivo de configuração do PyInstaller
+├── README.md                    # Documentação do projeto
+└── requirements.txt             # Dependências (customtkinter, etc.)
 ```
 
 ---

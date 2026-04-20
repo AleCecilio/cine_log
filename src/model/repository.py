@@ -1,4 +1,4 @@
-from . import database_handler
+from model import database_handler
 
 def salvar_registro(registro: dict) -> None:
     dados = database_handler.carregar_banco()

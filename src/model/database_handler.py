@@ -1,7 +1,7 @@
 import json
 import os
 
-from .config import CAMINHO_JSON
+from model.config import CAMINHO_JSON
 
 def carregar_banco():
     # Debug: Se quiser ver onde ele está procurando na hora que der erro
