@@ -4,7 +4,7 @@ Encapsula apenas os widgets e comportamentos da aba 'Quero Ver'.
 """
 import customtkinter as ctk
 from tkinter import messagebox
-from view.theme import CORES
+from view.utils import CORES
 from view.components.tabela import TabelaEstilizada
 from view.components.modais import ModalAdicionarWatchlist
 from services import engine

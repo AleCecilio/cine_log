@@ -33,7 +33,6 @@ cine_log/
 │   └── view/
 │       ├── __init__.py
 │       ├── app.py               # Orquestrador da Interface Gráfica
-│       ├── theme.py             # Central de cores e estilos (CORES)
 │       ├── components/          # Peças reutilizáveis da UI
 │       │   ├── __init__.py
 │       │   ├── tabela.py        # Classe TabelaEstilizada
@@ -42,12 +41,16 @@ cine_log/
 │       │   ├── __init__.py
 │       │   ├── aba_diario.py    # Lógica da aba Diário
 │       │   └── aba_watchlist.py # Lógica da aba Watchlist
-│       └── terminal/            # Interface antiga (Modo Texto)
+│       ├── terminal/            # Interface antiga (Modo Texto)
+│       │   ├── __init__.py
+│       │   ├── forms.py         # Formulários do terminal
+│       │   ├── menu.py          # Menus do terminal
+│       │   ├── reports.py       # Relatórios do terminal
+│       │   └── io_helpers.py    # Utilitários de entrada/saída
+│       └── utils/                # Telas/Abas principais
 │           ├── __init__.py
-│           ├── forms.py         # Formulários do terminal
-│           ├── menu.py          # Menus do terminal
-│           ├── reports.py       # Relatórios do terminal
-│           └── io_helpers.py    # Utilitários de entrada/saída
+│           ├── theme.py             # Central de cores e estilos (CORES)
+│           └── image.py             # Carrega o Logo do app
 ├── CineLog.spec                 # Arquivo de configuração do PyInstaller
 ├── README.md                    # Documentação do projeto
 └── requirements.txt             # Dependências (customtkinter, etc.)

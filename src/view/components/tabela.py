@@ -4,7 +4,7 @@ Encapsula o widget ttk.Treeview com estilo Dark.
 Ambas as abas (Diário e Watchlist) usam esta mesma classe (DRY - Don't Repeat Yourself).
 """
 from tkinter import ttk
-from view.theme import CORES
+from view.utils import CORES
 
 class TabelaEstilizada(ttk.Treeview):
     _estilo_aplicado = False
@@ -21,18 +21,18 @@ class TabelaEstilizada(ttk.Treeview):
                 foreground=CORES["texto_primario"],
                 fieldbackground=CORES["bg_principal"],
                 borderwidth=0,
-                rowheight=36,
-                font=("Helvetica", 11),
+                rowheight=42,
+                font=("Helvetica", 13),
             )
             style.configure(
                 f"{style_name}.Heading",
                 background=CORES["bg_header"],
                 foreground=CORES["azul_suave"],
-                font=("Helvetica", 11, "bold"),
+                font=("Helvetica", 12, "bold"),
                 relief="flat",
                 borderwidth=0,
             )
-            style.map(style_name, background=[("selected", CORES["bg_linha_alt"])], foreground=[("selected", "#ffffff")])
+            style.map(style_name, background=[("selected", "#2c3440")], foreground=[("selected", "#ffffff")])
             style.map(f"{style_name}.Heading", background=[("active", CORES["bg_header"])])
             TabelaEstilizada._estilo_aplicado = True
 
@@ -44,7 +44,7 @@ class TabelaEstilizada(ttk.Treeview):
             self.column(col_id, width=col_width, anchor="w", minwidth=60)
 
         self.tag_configure("par", background=CORES["bg_principal"])
-        self.tag_configure("impar", background="#1f1f38")
+        self.tag_configure("impar", background=CORES["bg_linha_alt"])
 
     def recarregar(self, linhas: list[tuple]):
         self.delete(*self.get_children())

@@ -5,7 +5,7 @@ Responsável por validar a entrada visual e chamar a lógica de negócio (Engine
 import customtkinter as ctk
 from tkinter import messagebox
 from datetime import date
-from view.theme import CORES
+from view.utils import CORES
 from services import engine
 
 class _ModalBase(ctk.CTkToplevel):

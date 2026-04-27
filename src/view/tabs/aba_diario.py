@@ -3,7 +3,7 @@ ARQUITETURA: SUB-VIEW (TELA DIÁRIO)
 Encapsula apenas os widgets e comportamentos da aba de histórico.
 """
 import customtkinter as ctk
-from view.theme import CORES
+from view.utils import CORES
 from view.components.tabela import TabelaEstilizada
 from view.components.modais import ModalRegistrarFilme
 from services import engine
@@ -18,7 +18,17 @@ class AbaDiario(ctk.CTkFrame):
         self.lbl_total.pack(side="left", padx=10)
         ctk.CTkButton(topo, text="+ Registrar", fg_color=CORES["azul_destaque"], command=self._abrir_modal_registro).pack(side="right")
         
-        self.tabela = TabelaEstilizada(self, [("titulo", "Título", 320), ("data", "Assistido em", 120), ("nota", "Nota", 100)])
+        self.tabela = TabelaEstilizada(self, [
+            ("titulo", "Título", 400),
+            ("data", "Assistido em", 150),
+            ("nota", "Nota", 150)
+        ])
+
+        self.tabela.column("data", anchor="center")
+        self.tabela.heading("data", anchor="center")
+
+        self.tabela.column("nota", anchor="center")
+        self.tabela.heading("nota", anchor="center")
         self.tabela.pack(fill="both", expand=True, padx=20, pady=20)
 
     def atualizar(self):
